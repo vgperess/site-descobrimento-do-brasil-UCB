@@ -5,7 +5,7 @@
   }
 
   nav {
-      background-color: #333;
+      background-color: green;
       overflow: hidden;
   }
 
@@ -28,5 +28,6 @@
   }
 
   nav ul li a:hover {
-      background-color: #111;
+      background-color: yellow;
+      color: black;
   }
