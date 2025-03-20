@@ -5,6 +5,10 @@
     margin: 0;  
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     background-color: #fffae4;
     font-family: "Playfair display", serif;
@@ -20,7 +24,7 @@ header{
     border-bottom: #262b4d solid 4px;
 }
 
-a{
+nav a{
     text-decoration: none;
     font-size: 180%;
     background-color: #8cba80;
@@ -38,7 +42,78 @@ nav{
     justify-content: space-evenly;
 }
 
-a:hover{
+nav a:hover{
     background-color: #cacf85;
     color: black;
+}
+
+.inicio{
+    color: #4d5382;
+    font-size: 400%;
+    position: relative;
+    top: 4rem;
+    padding: 2rem;
+}
+
+.p1{
+    font-size: xx-large;
+    padding: 2rem;
+    text-align: justify;
+    position: relative;
+    top: 1rem;
+    color: #262b4d;
+}
+
+.Sobre{
+    color: #4d5382;
+    font-size: 400%;
+    position: relative;
+    top: 4rem;
+    padding: 2rem;
+}
+
+.Linhadotempo{
+    color: #4d5382;
+    font-size: 400%;
+    position: relative;
+    top: 4rem;
+    padding: 2rem;
+}
+
+.Grupo{
+    color: #4d5382;
+    font-size: 400%;
+    position: relative;
+    top: 4rem;
+    padding: 2rem;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 400vh;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 400vh;
+}
+
+.container{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 5rem;
+    color: #262b4d;
+}
+
+a{
+    text-decoration: none;
+    color: #262b4d;
 }
