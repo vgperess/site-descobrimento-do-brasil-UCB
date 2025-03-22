@@ -117,3 +117,14 @@ a{
     text-decoration: none;
     color: #262b4d;
 }
+
+span{
+    color: #496842;
+}
+
+
+.video-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
