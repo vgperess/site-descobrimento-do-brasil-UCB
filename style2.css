@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #fffae4;
+    background-image: url("https://img.freepik.com/fotos-gratis/plano-de-fundo-texturizado-de-concreto-vinheta-amarelo-pastel_53876-124561.jpg?t=st=1744472193~exp=1744475793~hmac=62e5719d6dc76b42eeb058476925e8b103975321230e3c5579d7608c5957da81&w=900");
     color: #333;
     line-height: 1.6;
     margin: 0;
@@ -50,7 +50,8 @@ header {
 
 .content {
     padding: 20px;
-    background-color: white;
+    background-image: url("https://img.freepik.com/fotos-gratis/pagina-resistida_53876-88600.jpg?t=st=1744472602~exp=1744476202~hmac=a11d5f5a74af2f43f0af856be87dbc2b4516ca1d4975b16c2e1f904d32e5711e&w=996");
+    background-position: center;
     position: relative;
     border-radius: 6px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
