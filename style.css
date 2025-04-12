@@ -51,7 +51,7 @@ nav a:hover{
 }
 .inicio{
     color: #4d5382;
-    font-size: 400%;
+    font-size: 200%;
     position: relative;
     top: 4rem;
     padding: 2rem;
@@ -68,7 +68,7 @@ nav a:hover{
 
 .Sobre{
     color: #4d5382;
-    font-size: 400%;
+    font-size: 200%;
     position: relative;
     top: 4rem;
     padding: 2rem;
@@ -76,7 +76,7 @@ nav a:hover{
 
 .Linhadotempo{
     color: #4d5382;
-    font-size: 400%;
+    font-size: 200%;
     position: relative;
     top: 4rem;
     padding: 2rem;
@@ -84,7 +84,7 @@ nav a:hover{
 
 .Curi{
     color: #4d5382;
-    font-size: 400%;
+    font-size: 200%;
     position: relative;
     text-align: center;
     top: 4rem;
@@ -136,5 +136,5 @@ span{
     text-align: center;
     padding-left: 50px;
     padding-right: 50px;
-    font-size: 200%;
+    font-size: 150%;
 }
