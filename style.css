@@ -8,6 +8,8 @@
 html{
     scroll-behavior: smooth;
     background-image: url("https://img.freepik.com/fotos-gratis/plano-de-fundo-texturizado-de-concreto-vinheta-amarelo-pastel_53876-124561.jpg?t=st=1744472193~exp=1744475793~hmac=62e5719d6dc76b42eeb058476925e8b103975321230e3c5579d7608c5957da81&w=900");
+    background-position: center;
+    background-size: cover;
 }
 
 body{
