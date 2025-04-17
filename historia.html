@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -53,7 +52,23 @@
         </div>
     </main>
     <script>
-        // JavaScript for interactivity can be added here
+        document.addEventListener('DOMContentLoaded', function() {
+            const contentElements = document.querySelectorAll('.content');
+    
+            contentElements.forEach(content => {
+                const img = content.querySelector('img');
+                img.style.opacity = '0'; // Initially hide the image
+    
+                content.addEventListener('mouseover', function() {
+                    img.style.opacity = '1'; // Show the image on hover
+                    img.style.transition = 'opacity 0.3s ease'; // Smooth transition
+                });
+    
+                content.addEventListener('mouseout', function() {
+                    img.style.opacity = '0'; // Hide the image when not hovering
+                });
+            });
+        });
     </script>
 </body>
 </html>

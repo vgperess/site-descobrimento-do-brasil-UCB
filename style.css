@@ -1,6 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+:root {
+    --primary-color: #4d5382;
+    --secondary-color: #262b4d;
+    --tertiary-color: #496842;
+}
 
 *{
+    box-sizing: border-box;
     padding: 0;
     margin: 0;  
 }
@@ -13,18 +18,25 @@ html{
 }
 
 body{
-    
     font-family: "Playfair display", serif;
+    animation: fadeIn 1.5s ease-in-out;
+    line-height: 1.6;
+    color: #333;
 }
 
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
 
 header{
-    background-color: #4d5382;
+    background-color: var(--primary-color);
     color: white;
-    padding: 1rem;
+    padding: 1.5rem;
     text-align: center;
     font-size: 120%;
-    border-bottom: #262b4d solid 4px;
+    border-bottom: var(--secondary-color) solid 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 nav a{
@@ -32,29 +44,35 @@ nav a{
     font-size: 180%;
     background-color: #8cba80;
     color: white;
-    border-radius:8px;
+    border-radius: 8px;
     padding: 14px 3rem;
     position: relative;
     top: 1.5rem;
-    border: solid 2px #496842;
+    border: solid 2px var(--tertiary-color);
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 nav{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    margin-bottom: 2rem;
 }
 
 nav a:hover{
     background-color: #cacf85;
     color: black;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
 .inicio{
-    color: #4d5382;
+    color: var(--primary-color);
     font-size: 300%;
-    position: relative;
-    top: 4rem;
     padding: 2rem;
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .p1{
@@ -63,32 +81,34 @@ nav a:hover{
     text-align: justify;
     position: relative;
     top: 1rem;
-    color: #262b4d;
+    color: var(--secondary-color);
+    line-height: 1.75;
+    background-color: rgba(234, 227, 188, 0.772);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    margin: 1rem 2rem;
 }
 
 .Sobre{
-    color: #4d5382;
+    color: var(--primary-color);
     font-size: 200%;
-    position: relative;
-    top: 4rem;
     padding: 2rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .Linhadotempo{
-    color: #4d5382;
+    color: var(--primary-color);
     font-size: 200%;
-    position: relative;
-    top: 4rem;
     padding: 2rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .Curi{
-    color: #4d5382;
+    color: var(--primary-color);
     font-size: 400%;
-    position: relative;
     text-align: center;
-    top: 4rem;
     padding: 2rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 main{
@@ -113,28 +133,63 @@ main{
     align-items: center;
     font-weight: bold;
     font-size: 5rem;
-    color: #262b4d;
+    color: var(--secondary-color);
+    transition: transform 0.3s ease;
+    padding: 1rem;
+}
+
+.container:hover {
+    transform: scale(1.02);
 }
 
 a{
     text-decoration: none;
-    color: #262b4d;
+    color: var(--secondary-color);
 }
 
 span{
-    color: #496842;
+    color: var(--tertiary-color);
 }
-
 
 .video-center {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
+
 .txtCuri{
-    color:#304f28;
+    color: #304f28;
     text-align: center;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding: 2rem 50px;
     font-size: 150%;
+    line-height: 1.75;
+    background-color: rgba(234, 227, 188, 0.772);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    margin: 1rem 2rem;
+}
+
+/* Responsive enhancements */
+@media screen and (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    nav a {
+        margin-bottom: 1rem;
+    }
+    
+    .p1, .txtCuri {
+        padding: 1rem;
+        margin: 1rem;
+        font-size: 1.25rem;
+    }
+    
+    .inicio, .Sobre, .Linhadotempo, .Curi {
+        font-size: 2rem;
+        padding: 1rem;
+    }
 }

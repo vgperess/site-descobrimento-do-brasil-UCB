@@ -1,18 +1,275 @@
-body {
-    font-family: Arial, sans-serif;
+@font-face {
+    font-family: 'Playfair Display';
+    src: url('/fonts/PlayfairDisplay-Regular.woff2') format('woff2'),
+         url('/fonts/PlayfairDisplay-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+:root {
+    --primary-color: #4d5382;
+    --accent-color: #4CAF50;
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    --transition: all 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+html{
+    scroll-behavior: smooth;
     background-image: url("https://img.freepik.com/fotos-gratis/plano-de-fundo-texturizado-de-concreto-vinheta-amarelo-pastel_53876-124561.jpg?t=st=1744472193~exp=1744475793~hmac=62e5719d6dc76b42eeb058476925e8b103975321230e3c5579d7608c5957da81&w=900");
+    background-position: center;
+    background-size: cover;
+}
+
+body {
+    font-family: "Playfair Display", serif;
+    background-image: url("https://img.freepik.com/fotos-gratis/plano-de-fundo-texturizado-de-concreto-vinheta-amarelo-pastel_53876-124561.webp?t=st=1744472193~exp=1744475793~hmac=62e5719d6dc76b42eeb058476925e8b103975321230e3c5579d7608c5957da81&w=900");
     color: #333;
     line-height: 1.6;
     margin: 0;
     padding: 0;
     background-position: center;
     background-size: cover;
+    animation: fadeIn 1.5s ease-in-out;
 }
 
-header {
-    background-color: #4d5382;
+header{
+    background-color: var(--primary-color);
     color: white;
-    padding: 10px 0;
+    padding: 1.5rem;
+    text-align: center;
+    font-size: 120%;
+    border-bottom: var(--secondary-color) solid 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: var(--accent-color);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+}
+
+.container {
+    padding: 1rem 2rem;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+    box-sizing: border-box;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+}
+
+.container.left {
+    left: 0;
+}
+
+.container.right {
+    left: 50%;
+}
+
+.content {
+    padding: 20px;
+    background-image: url("https://img.freepik.com/fotos-gratis/pagina-resistida_53876-88600.jpg?t=st=1744472602~exp=1744476202~hmac=a11d5f5a74af2f43f0af856be87dbc2b4516ca1d4975b16c2e1f904d32e5711e&w=996");
+    background-position: center;
+    position: relative;
+    border-radius: 6px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+}
+
+.container.left .content {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+.container.right .content {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.container.left::before,
+.container.right::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 15px;
+    width: 0;
+    z-index: 1;
+    border: medium solid var(--accent-color);
+}
+
+.container.left::before {
+    right: 30px;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent var(--accent-color);
+}
+
+.container.right::before {
+    left: 30px;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent var(--accent-color) transparent transparent;
+}
+
+@media screen and (max-width: 768px) {
+    .timeline::after {
+        left: 30px;
+    }
+
+    .container {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+
+    .container.right {
+        left: 0%;
+    }
+
+    .container.left::before, .container.right::before {
+        left: 60px;
+        border: medium solid var(--accent-color);
+        border-width: 10px 10px 10px 0;
+        border-color: transparent var(--accent-color) transparent transparent;
+    }
+
+    .container.left .content, .container.right .content {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+nav a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    background-color: #8cba80;
+    color: white;
+    border-radius: 8px;
+    padding: 12px 2.5rem;
+    position: relative;
+    top: 1.5rem;
+    border: solid 2px #496842;
+    margin: 0 0.5rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+nav a:hover {
+    background-color: #cacf85;
+    color: black;
+}
+
+.common-heading {
+    color: var(--primary-color);
+    font-size: 2rem;
+    position: relative;
+    top: 2rem;
+    padding: 2rem;
+    box-shadow: var(--box-shadow);
+    border-radius: 8px;
+}
+
+.p1 {
+    font-size: xx-large;
+    padding: 2rem;
+    text-align: justify;
+    position: relative;
+    top: 1rem;
+    color: #262b4d;
+}
+
+.inicio, .Sobre, .Linhadotempo, .Grupo {
+    color: var(--primary-color);
+    font-size: 2rem;
+    position: relative;
+    top: 2rem;
+    padding: 2rem;
+    box-shadow: var(--box-shadow);
+    border-radius: 8px;
+}
+
+.container .content {
+    padding: 20px;
+    background-image: url("https://img.freepik.com/fotos-gratis/pagina-resistida_53876-88600.jpg?t=st=1744472602~exp=1744476202~hmac=a11d5f5a74af2f43f0af856be87dbc2b4516ca1d4975b16c2e1f904d32e5711e&w=996");
+    background-position: center;
+    position: relative;
+    border-radius: 6px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+    overflow: hidden; /* Ensure no overflow due to image initially hidden */
+}
+
+.container .content img {
+    display: block; /* Ensure it takes full width when visible */
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin: 0;
+    opacity: 0; /* Hide the image initially */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+.container .content:hover img {
+    opacity: 1; /* Show the image on hover */
+    transform: scale(1.02); /* Slight zoom effect on hover */
+}
+
+.container .content p {
+    margin: 0; /* Adjust margins to optimize space */
+    height: auto; /* Allows text content to define the height */
+}
+
+.container.left .content img,
+.container.right .content img {
+    float: none;
+    margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+    .container.left .content img,
+    .container.right .content img {
+        float: none;
+        margin: 10px auto;
+        max-width: 100%;
+    }
+    
+    .container .content, 
+    .container.left .content, 
+    .container.right .content {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    
+    nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    nav a {
+        width: 80%;
+        text-align: center;
+    }
+    
+    .p1 {
+        font-size: x-large;
+    }
+}
+
+.vid {
     text-align: center;
 }
 
@@ -21,6 +278,7 @@ header {
     max-width: 1000px;
     margin: 20px auto;
     padding: 10px;
+    animation: fadeIn 1.5s ease-in-out;
 }
 
 .timeline::after {
@@ -57,6 +315,7 @@ header {
     position: relative;
     border-radius: 6px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
 }
 
 .container.left .content {
@@ -121,109 +380,4 @@ header {
         margin-left: 0;
         margin-right: 0;
     }
-}
-nav a{
-    text-decoration: none;
-    font-size: 180%;
-    background-color: #8cba80;
-    color: white;
-    border-radius:8px;
-    padding: 14px 3rem;
-    position: relative;
-    top: 1.5rem;
-    border: solid 2px #496842;
-}
-
-nav{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-}
-
-nav a:hover{
-    background-color: #cacf85;
-    color: black;
-}
-
-.inicio{
-    color: #4d5382;
-    font-size: 400%;
-    position: relative;
-    top: 4rem;
-    padding: 2rem;
-}
-
-.p1{
-    font-size: xx-large;
-    padding: 2rem;
-    text-align: justify;
-    position: relative;
-    top: 1rem;
-    color: #262b4d;
-}
-
-.Sobre{
-    color: #4d5382;
-    font-size: 400%;
-    position: relative;
-    top: 4rem;
-    padding: 2rem;
-}
-
-.Linhadotempo{
-    color: #4d5382;
-    font-size: 400%;
-    position: relative;
-    top: 4rem;
-    padding: 2rem;
-}
-
-.Grupo{
-    color: #4d5382;
-    font-size: 400%;
-    position: relative;
-    top: 4rem;
-    padding: 2rem;
-}
-.container .content {
-    position: relative;
-    overflow: hidden;
-    transition: all 0.3s ease;
-}
-
-.container .content:hover {
-    transform: scale(1.02);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-.container .content img {
-    width: 100%;
-    height: auto;
-    border-radius: 6px;
-    display: none;
-    margin: 0;
-    transition: all 0.3s ease;
-}
-
-.container .content:hover img {
-    display: block;
-}
-
-.container.left .content img,
-.container.right .content img {
-    float: none;
-    margin: 0;
-}
-
-@media screen and (max-width: 768px) {
-    .container.left .content img,
-    .container.right .content img {
-        float: none;
-        margin: 10px auto;
-        max-width: 100%;
-    }
-}
-
-.vid {
-    text-align: center;
 }
